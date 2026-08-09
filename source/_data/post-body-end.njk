@@ -1,24 +1,9 @@
 {#
-  giscus 评论区（GitHub Discussions 驱动）
+  Supabase 匿名评论区（审核模式）
   单篇文章可通过 front-matter 设置 comments: false 关闭
+  配置：source/comments/comments.js 顶部的 SC_CONFIG
 #}
 {%- if post.comments %}
-<div class="post-comments-giscus">
-  <h3 class="giscus-title">评论区</h3>
-  <script src="https://giscus.app/client.js"
-    data-repo="SIpeenys/sipeenys.github.io"
-    data-repo-id="R_kgDOTzR_vg"
-    data-category="General"
-    data-category-id="DIC_kwDOTzR_vs4DDAJD"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="transparent_dark"
-    data-lang="zh-CN"
-    crossorigin="anonymous"
-    async>
-  </script>
-</div>
+<div class="sc-wrap" id="sc-comments"></div>
+<script src="{{ url_for('comments/comments.js') }}" defer></script>
 {%- endif %}

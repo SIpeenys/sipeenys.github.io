@@ -39,6 +39,183 @@
   padding-top: 20px;
 }
 
+// Supabase 匿名评论区（深灰适配）
+.sc-wrap {
+  border-top: 1px solid #3d4147;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+.sc-title {
+  font-size: 1.1em;
+  color: #e4e7ea;
+  margin-bottom: 12px;
+}
+
+.sc-list {
+  margin-bottom: 20px;
+}
+
+.sc-empty {
+  color: #9aa1a9;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.sc-cmt {
+  padding: 14px 0;
+  border-bottom: 1px solid #34373c;
+}
+
+.sc-cmt:last-child {
+  border-bottom: none;
+}
+
+.sc-cmt-root {
+  margin-bottom: 4px;
+}
+
+.sc-cmt-reply {
+  margin-left: 44px;
+  padding-left: 16px;
+  border-left: 2px solid #3d4147;
+}
+
+.sc-cmt-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.sc-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3d4147;
+  color: #e4e7ea;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.sc-cmt-nick {
+  color: #e4e7ea;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.sc-cmt-time {
+  color: #6b7078;
+  font-size: 0.8em;
+}
+
+.sc-cmt-body {
+  color: #cfd3d8;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.sc-cmt-foot {
+  margin-top: 6px;
+}
+
+.sc-reply-btn {
+  background: none;
+  border: none;
+  color: #9aa1a9;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.85em;
+
+  &:hover {
+    color: #eef1f3;
+  }
+}
+
+.sc-form {
+  margin-top: 8px;
+}
+
+.sc-reply-hint {
+  color: #a8b0b8;
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.sc-form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sc-form input,
+.sc-form textarea {
+  background: #232529;
+  border: 1px solid #3d4147;
+  color: #e4e7ea;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: inherit;
+  outline: none;
+
+  &:focus {
+    border-color: #5a5f66;
+  }
+}
+
+.sc-form input {
+  flex: 1;
+  padding: 8px 12px;
+}
+
+.sc-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.sc-submit {
+  background: #3d4147;
+  color: #e4e7ea;
+  border: 1px solid #4a4f56;
+  padding: 8px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+
+  &:hover {
+    background: #4a4f56;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}
+
+.sc-note {
+  margin-top: 10px;
+  color: #9aa1a9;
+  font-size: 0.85em;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sc-form-row {
+    flex-direction: column;
+  }
+
+  .sc-cmt-reply {
+    margin-left: 16px;
+  }
+}
+
 // 评论区标题
 .giscus-title {
   font-size: 1.1em;
