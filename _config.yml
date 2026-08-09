@@ -18,7 +18,7 @@ timezone: Asia/Shanghai
 # URL
 ## If you use GitHub Page, set url as 'https://username.github.io/'
 url: https://sipeenys.github.io
-permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
