@@ -10,7 +10,7 @@
 
   // ★ 配置区（替换成你自己的 Supabase 项目信息）
   var SC_CONFIG = {
-    supabaseUrl: 'https://mxurcwwekezdpyjmqkmi.supabase.co', // Project URL
+    supabaseUrl: 'https://mxurcwwkezdpyjmjqkmi.supabase.co', // Project URL
     anonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im14dXJjd3drZXpkcHlqbWpxa21pIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODYyODA5NTAsImV4cCI6MjEwMTg1Njk1MH0.cilOOipzuD9LasFQgDLf5-vEJVdSnMgHXLfTUu_NtpE', // anon public key
   };
 
