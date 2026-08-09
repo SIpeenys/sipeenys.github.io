@@ -1,0 +1,49 @@
+// ============================================================
+// 深灰配色 · 额外样式覆盖
+// 通过 custom_file_path.style 在最后注入，可覆盖主题任何样式
+// ============================================================
+
+// 滚动条（深色）
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #232529;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3d4147;
+  border-radius: 4px;
+
+  &:hover {
+    background: #4a4f56;
+  }
+}
+
+// 正文区域微调
+.post-block {
+  border-radius: 6px;
+}
+
+// 文章标题下划线（链接 hover 用灰色而非彩色）
+.post-body a {
+  text-decoration-color: #5f646b;
+}
+
+// giscus 评论区容器
+.post-comments-giscus {
+  border-top: 1px solid #3d4147;
+  margin-top: 30px;
+  padding-top: 20px;
+}
+
+// 返回顶部按钮
+.back-to-top {
+  color: #9aa1a9;
+
+  &:hover {
+    color: #eef1f3;
+  }
+}

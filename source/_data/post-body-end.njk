@@ -1,0 +1,27 @@
+{#
+  giscus 评论区（GitHub Discussions 驱动）
+  部署完成后需要填写 data-repo-id 与 data-category-id：
+  1. 在仓库 Settings 开启 Discussions
+  2. 打开 https://giscus.app/zh-CN 选择仓库后自动生成
+  单篇文章可通过 front-matter 设置 comments: false 关闭
+#}
+{%- if post.comments %}
+<div class="post-comments-giscus">
+  <script src="https://giscus.app/client.js"
+    data-repo="SIpeenys/sipeenys.github.io"
+    data-repo-id=""
+    data-category="General"
+    data-category-id=""
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="transparent_dark"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+  </script>
+</div>
+{%- endif %}
