@@ -121,8 +121,35 @@
 | 博客网址 | https://sipeenys.github.io |
 | 博客仓库 | `SIpeenys/sipeenys.github.io` |
 | 本地目录 | `D:\zsbsth` |
+| 当前主题 | **Butterfly 5.7.0**（备用：NexT 8.29 保留在 themes/next） |
+| 主题切换 | 改 `_config.yml` 一行 `theme: butterfly/next` |
 | Supabase 项目 | https://supabase.com/dashboard/project/mxurcwwkezdpyjmjqkmi |
 | 评论表 | `public.comments`（status: pending→approved） |
 | 评论区组件 | `source/comments/comments.js` |
-| 深灰配色 | `source/_data/variables.styl` |
+| 深灰配色 CSS | `source/css/butterfly-gray.css` |
 | 部署工作流 | `.github/workflows/deploy-pages.yml` |
+
+---
+
+## 六、Butterfly 主题适配记录（2026-08-10 新增）
+
+### 决策背景
+用户想试试蝴蝶主题的颜值，但要求「原来的别删，不好可以弄回去」。
+
+### 方案设计
+- NexT 所有文件**完全保留**（themes/next、source/_data/variables.styl、styles.styl 等）
+- 切换 = `_config.yml` 一行 `theme: butterfly` ↔ `theme: next`
+- 黑白切换零风险
+
+### 适配要点
+1. **深灰配色**：Butterfly 使用 CSS 变量（`--card-bg`/`--font-color`/`--global-bg` 等），创建 `source/css/butterfly-gray.css` 覆盖 `:root` + `[data-theme='dark']` 变量。颜色值和 NexT 版本完全相同。
+2. **评论区注入**：Butterfly 不支持 Supabase 内置，通过 `inject.bottom` 注入脚本：检测文章页（`#article-container.post-content`）→ 动态创建评论容器 → 加载 comments.js。
+3. **Butterfly 5.7.0 与 Hexo 8 兼容**：需要额外安装 `hexo-renderer-pug`（和 NexT 的 ejs 可共存）。
+4. **搜索**：搜索插件 hexo-generator-searchdb 生成 search.xml，Butterfly 设置 `search.use: local_search` 即可复用。
+5. **代码高亮**：从 `light` 改为 `darker`（深色主题匹配）。
+6. **固定暗色**：`display_mode: dark` + `darkmode.button: false`，无切换按钮，始终深灰。
+7. **顶部图**：`disable_top_img: true`（保持干净无 Banner）。
+8. **侧边栏**：author 卡片（头像+GitHub链接）、公告卡片（毛姆名言）、最新文章、标签分类。
+
+### 回退方案
+改 `_config.yml` 的 `theme: butterfly` → `theme: next`，push 即可。NexT 的深灰配色、自定义样式、评论区全部原样Ready。
