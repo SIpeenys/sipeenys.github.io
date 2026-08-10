@@ -1,0 +1,243 @@
+/* ============================================================
+ * Butterfly 深灰配色（与 NexT 版本一致）+ Supabase 评论区样式
+ * 通过 themes/butterfly/_config.yml 的 inject.head 引入
+ * ============================================================ */
+
+/* ---------- 深灰主色调（覆盖 Butterfly 变量） ---------- */
+:root,
+[data-theme='dark'] {
+  --global-bg: #232529;            /* 页面背景 */
+  --card-bg: #2b2d31;              /* 卡片背景 */
+  --font-color: #cfd3d8;           /* 正文文字 */
+  --card-meta: #9aa1a9;            /* 次要文字 */
+  --white: #e4e7ea;                /* 强调文字 */
+  --light-grey: #6b7078;
+  --dark-grey: #4a4f56;
+  --hr-border: #3d4147;
+  --blockquote-color: #aab1b8;
+  --blockquote-bg: #232529;
+  --text-highlight-color: #8b9096;
+  --toc-link-color: #aeb7c0;
+  --scrollbar-color: #3d4147;
+  --default-bg-color: #8b9096;
+  --search-bg: #2b2d31;
+  --sidebar-bg: #2b2d31;
+  --btn-bg: #3d4147;
+  --btn-color: #cfd3d8;
+  --btn-hover-color: #eef1f3;
+  --pseudo-hover: #8b9096;
+}
+
+/* 链接颜色 */
+[data-theme='dark'] #post a,
+[data-theme='dark'] .post-content a,
+[data-theme='dark'] a {
+  color: #aeb7c0;
+}
+
+[data-theme='dark'] a:hover {
+  color: #eef1f3;
+}
+
+/* 代码块 */
+[data-theme='dark'] figure.highlight,
+[data-theme='dark'] .highlight {
+  background: #22252a;
+}
+
+/* 侧边栏/卡片悬浮 */
+[data-theme='dark'] .card-widget:hover {
+  box-shadow: 0 3px 8px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 导航栏背景（无顶部图时） */
+[data-theme='dark'] #page-header:not(.not-top-img) {
+  background: #232529;
+}
+
+[data-theme='dark'] #nav {
+  background: rgba(35, 37, 41, 0.9);
+}
+
+/* 顶部图禁用时首页布局 */
+[data-theme='dark'] #page-header #site-info {
+  padding-top: 6rem;
+}
+
+/* ---------- Supabase 评论区（sc-*） ---------- */
+.sc-wrap {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #3d4147;
+}
+
+.sc-title {
+  font-size: 1.1em;
+  color: #e4e7ea;
+  margin-bottom: 12px;
+}
+
+.sc-list {
+  margin-bottom: 20px;
+}
+
+.sc-empty {
+  color: #9aa1a9;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.sc-cmt {
+  padding: 14px 0;
+  border-bottom: 1px solid #34373c;
+}
+
+.sc-cmt:last-child {
+  border-bottom: none;
+}
+
+.sc-cmt-root {
+  margin-bottom: 4px;
+}
+
+.sc-cmt-reply {
+  margin-left: 44px;
+  padding-left: 16px;
+  border-left: 2px solid #3d4147;
+}
+
+.sc-cmt-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.sc-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #3d4147;
+  color: #e4e7ea;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.sc-cmt-nick {
+  color: #e4e7ea;
+  font-weight: 600;
+  margin-right: 10px;
+}
+
+.sc-cmt-time {
+  color: #6b7078;
+  font-size: 0.8em;
+}
+
+.sc-cmt-body {
+  color: #cfd3d8;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.sc-cmt-foot {
+  margin-top: 6px;
+}
+
+.sc-reply-btn {
+  background: none;
+  border: none;
+  color: #9aa1a9;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0.85em;
+}
+
+.sc-reply-btn:hover {
+  color: #eef1f3;
+}
+
+.sc-form {
+  margin-top: 8px;
+}
+
+.sc-reply-hint {
+  color: #a8b0b8;
+  font-size: 0.85em;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.sc-form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.sc-form input,
+.sc-form textarea {
+  background: #232529;
+  border: 1px solid #3d4147;
+  color: #e4e7ea;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: inherit;
+  outline: none;
+}
+
+.sc-form input:focus,
+.sc-form textarea:focus {
+  border-color: #5a5f66;
+}
+
+.sc-form input {
+  flex: 1;
+  padding: 8px 12px;
+}
+
+.sc-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  resize: vertical;
+  margin-bottom: 10px;
+}
+
+.sc-submit {
+  background: #3d4147;
+  color: #e4e7ea;
+  border: 1px solid #4a4f56;
+  padding: 8px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+.sc-submit:hover {
+  background: #4a4f56;
+}
+
+.sc-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sc-note {
+  margin-top: 10px;
+  color: #9aa1a9;
+  font-size: 0.85em;
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .sc-form-row {
+    flex-direction: column;
+  }
+
+  .sc-cmt-reply {
+    margin-left: 16px;
+  }
+}
