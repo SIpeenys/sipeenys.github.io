@@ -284,7 +284,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 认真生活，也认真写代码
+    description: 凑活学
     button:
       enable: true
       icon: fab fa-github
@@ -292,7 +292,7 @@ aside:
       link: https://github.com/SIpeenys
   card_announcement:
     enable: true
-    content: 满地都是六便士，他却抬头看见了月亮。
+    content: 欢迎欢迎。
   card_recent_post:
     enable: true
     # If set 0 will show all
