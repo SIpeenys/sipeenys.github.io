@@ -107,7 +107,9 @@
       root.appendChild(empty);
     }
 
-    list.replaceChild(root, list.firstChild);
+    // 清空旧列表后追加新列表（不能用 replaceChild，空列表时会报错）
+    while (list.firstChild) list.removeChild(list.firstChild);
+    list.appendChild(root);
   }
 
   /* ---------- 数据 ---------- */
@@ -119,14 +121,25 @@
       '&order=created_at.asc' +
       '&limit=500';
 
-    fetch(url, { headers: headers() })
+    // 显示加载中状态
+    list.appendChild(el('div', 'sc-empty', '评论加载中…'));
+
+    // 超时保护：10 秒无响应则中止
+    var controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = controller ? setTimeout(function () { controller.abort(); }, 10000) : null;
+
+    fetch(url, { headers: headers(), signal: controller ? controller.signal : undefined })
       .then(function (r) { return r.json(); })
       .then(function (data) {
         comments = Array.isArray(data) ? data : [];
         render();
       })
       .catch(function () {
+        while (list.firstChild) list.removeChild(list.firstChild);
         list.appendChild(el('div', 'sc-empty', '评论加载失败，请稍后刷新重试'));
+      })
+      .finally(function () {
+        if (timer) clearTimeout(timer);
       });
   }
 
