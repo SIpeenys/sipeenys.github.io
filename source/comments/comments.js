@@ -74,7 +74,7 @@
       replyTo = c.id;
       form.replyHint.textContent = '正在回复：' + (c.nick || '匿名') + '（点此处取消）';
       form.replyHint.style.display = 'block';
-      form.content.focus();
+      contentArea.focus();
     });
     foot.appendChild(replyBtn);
 
@@ -145,9 +145,9 @@
 
   function submit(e) {
     e.preventDefault();
-    var nick = form.nick.value.trim();
-    var mail = form.mail.value.trim();
-    var content = form.content.value.trim();
+    var nick = nickInput.value.trim();
+    var mail = mailInput.value.trim();
+    var content = contentArea.value.trim();
 
     if (!nick) { alert('请填写昵称'); return; }
     if (nick.length > 50) { alert('昵称最长 50 个字符'); return; }
@@ -161,7 +161,6 @@
       return;
     }
 
-    var btn = form.btn;
     btn.disabled = true;
     btn.textContent = '提交中...';
 
@@ -180,9 +179,9 @@
       .then(function (r) {
         if (!r.ok) throw new Error('HTTP ' + r.status);
         localStorage.setItem('sc_last_submit', String(Date.now()));
-        form.nick.value = '';
-        form.mail.value = '';
-        form.content.value = '';
+        nickInput.value = '';
+        mailInput.value = '';
+        contentArea.value = '';
         clearReply();
         form.note.style.display = 'block';
         form.note.textContent = '✅ 已收到！评论需审核通过后显示。';
@@ -236,7 +235,6 @@
   var btn = el('button', 'sc-submit', '提交');
   btn.type = 'submit';
   btn.name = 'btn';
-  form.btn = btn;
 
   form.note = el('div', 'sc-note');
 
@@ -250,10 +248,6 @@
   wrap.appendChild(title);
   wrap.appendChild(list);
   wrap.appendChild(form);
-
-  form.nick = nickInput;
-  form.mail = mailInput;
-  form.content = contentArea;
 
   load();
 })();
