@@ -1,6 +1,6 @@
 @echo off
 cd /d "%~dp0"
-set /p msg=è¯·è¾“å…¥æäº¤æ³¨é‡Šï¼š
+set /p msg=ÇëÊäÈëÌá½»×¢ÊÍ£º
 git add .
 git commit -m "%msg%"
 git push
