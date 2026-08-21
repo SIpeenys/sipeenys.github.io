@@ -142,7 +142,7 @@
 - 黑白切换零风险
 
 ### 适配要点
-1. **灰白配色**：Butterfly 使用 CSS 变量（`--card-bg`/`--font-color`/`--global-bg` 等），`source/css/butterfly-gray.css` 里默认（浅色）改 `:root` 变量、深色模式改 `[data-theme='dark']` 变量；顶部导航浅蓝色在「顶部栏：浅蓝色」的 `#nav` 规则里。
+1. **灰白配色**：Butterfly 使用 CSS 变量（`--card-bg`/`--font-color`/`--global-bg` 等），`source/css/butterfly-gray.css` 里默认（浅色）改 `:root` 变量、深色模式改 `[data-theme='dark']` 变量；顶部导航深蓝色在「顶部栏：深海洋蓝」的 `#nav` 规则里（需覆盖主题自带的白底/黑底规则）。
 2. **评论区注入**：Butterfly 不支持 Supabase 内置，通过 `inject.bottom` 注入脚本：检测文章页（`#article-container.post-content`）→ 动态创建评论容器 → 加载 comments.js。
 3. **Butterfly 5.7.0 与 Hexo 8 兼容**：需要额外安装 `hexo-renderer-pug`（和 NexT 的 ejs 可共存）。
 4. **搜索**：搜索插件 hexo-generator-searchdb 生成 search.xml，Butterfly 设置 `search.use: local_search` 即可复用。

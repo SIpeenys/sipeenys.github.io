@@ -1,5 +1,5 @@
 /* ============================================================
- * Butterfly 灰白配色（浅色）+ 浅蓝顶部导航 + Supabase 评论区样式
+ * Butterfly 灰白配色（浅色）+ 深蓝顶部导航 + Supabase 评论区样式
  * 通过 themes/butterfly/_config.yml 的 inject.head 引入
  * ============================================================ */
 
@@ -81,36 +81,30 @@
   box-shadow: 0 3px 8px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* 顶部栏：浅蓝色（亮/暗模式一致） */
-#nav,
-#page-header.nav-fixed #nav {
-  background: #a8c6ea;
+/* 顶部栏：深海洋蓝（亮/暗模式一致；选择器需覆盖主题自带的白色/黑色底规则） */
+#page-header.not-top-img > #nav,
+[data-theme='dark'] #page-header.not-top-img > #nav {
+  background: #28547a;
 }
 
-#page-header.nav-fixed #nav {
-  background: rgba(168, 198, 234, 0.85);
+#page-header.nav-fixed > #nav,
+[data-theme='dark'] #page-header.nav-fixed > #nav {
+  background: rgba(40, 84, 122, 0.88);
 }
 
-/* 浅蓝底上的导航文字改用深色 */
+/* 深蓝底上的导航文字改用白色 */
 #nav a,
 #nav span.site-page,
 #nav #toggle-menu,
 #nav .site-name {
-  color: #2e4057;
+  color: #f2f7fc !important;
   text-shadow: none;
 }
 
 #nav a:hover,
 #nav span.site-page:hover,
 #nav #toggle-menu:hover {
-  color: #101c2b;
-}
-
-/* 滚动固定状态（深色模式）同样用深色文字 */
-[data-theme='dark'] #page-header.nav-fixed #nav a,
-[data-theme='dark'] #page-header.nav-fixed #nav span.site-page,
-[data-theme='dark'] #page-header.nav-fixed #nav #toggle-menu {
-  color: #2e4057;
+  color: #ffffff !important;
 }
 
 /* 顶部导航栏「留言板」菜单项：排在搜索按钮左边 + 高亮文字（仅桌面端；移动端在侧边菜单列表中） */
@@ -145,12 +139,12 @@
   }
 
   #nav .menus_items .menus_item:has(> a[href='/comments/']) > a {
-    color: #a3540e; /* 深暖橙（浅蓝底上醒目） */
+    color: #ffb86c !important; /* 亮暖橙（深蓝底上醒目） */
     font-weight: 600; /* 加粗 */
   }
 
   #nav .menus_items .menus_item:has(> a[href='/comments/']) > a:hover {
-    color: #6e3700; /* 悬停更深 */
+    color: #ffffff !important; /* 悬停变白 */
   }
 }
 
@@ -302,9 +296,9 @@
 }
 
 .sc-submit {
-  background: #a8c6ea;
-  color: #2e4057;
-  border: 1px solid #8fb2d9;
+  background: #28547a;
+  color: #ffffff;
+  border: 1px solid #3a6a94;
   padding: 8px 24px;
   border-radius: 4px;
   cursor: pointer;
@@ -312,7 +306,7 @@
 }
 
 .sc-submit:hover {
-  background: #8fb2d9;
+  background: #3a6a94;
 }
 
 .sc-submit:disabled {
