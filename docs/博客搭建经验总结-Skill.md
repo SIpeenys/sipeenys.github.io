@@ -126,7 +126,7 @@
 | Supabase 项目 | https://supabase.com/dashboard/project/mxurcwwkezdpyjmjqkmi |
 | 评论表 | `public.comments`（status: pending→approved） |
 | 评论区组件 | `source/comments/comments.js` |
-| 深灰配色 CSS | `source/css/butterfly-gray.css` |
+| 灰白配色 CSS | `source/css/butterfly-gray.css` |
 | 部署工作流 | `.github/workflows/deploy-pages.yml` |
 
 ---
@@ -142,12 +142,12 @@
 - 黑白切换零风险
 
 ### 适配要点
-1. **深灰配色**：Butterfly 使用 CSS 变量（`--card-bg`/`--font-color`/`--global-bg` 等），创建 `source/css/butterfly-gray.css` 覆盖 `:root` + `[data-theme='dark']` 变量。颜色值和 NexT 版本完全相同。
+1. **灰白配色**：Butterfly 使用 CSS 变量（`--card-bg`/`--font-color`/`--global-bg` 等），`source/css/butterfly-gray.css` 里默认（浅色）改 `:root` 变量、深色模式改 `[data-theme='dark']` 变量；顶部导航浅蓝色在「顶部栏：浅蓝色」的 `#nav` 规则里。
 2. **评论区注入**：Butterfly 不支持 Supabase 内置，通过 `inject.bottom` 注入脚本：检测文章页（`#article-container.post-content`）→ 动态创建评论容器 → 加载 comments.js。
 3. **Butterfly 5.7.0 与 Hexo 8 兼容**：需要额外安装 `hexo-renderer-pug`（和 NexT 的 ejs 可共存）。
 4. **搜索**：搜索插件 hexo-generator-searchdb 生成 search.xml，Butterfly 设置 `search.use: local_search` 即可复用。
 5. **代码高亮**：从 `light` 改为 `darker`（深色主题匹配）。
-6. **固定暗色**：`display_mode: dark` + `darkmode.button: false`，无切换按钮，始终深灰。
+6. **默认浅色**：`display_mode: light`，默认灰白浅色；深色模式变量（`[data-theme='dark']`）保留，改回 `display_mode: dark` 即为深灰暗色。
 7. **顶部图**：`disable_top_img: true`（保持干净无 Banner）。
 8. **侧边栏**：author 卡片（头像+GitHub链接）、公告卡片（毛姆名言）、最新文章、标签分类。
 
