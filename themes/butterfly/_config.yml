@@ -285,7 +285,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 凑活学
+    description: 哈哈哈
     button:
       enable: true
       icon: fab fa-github
