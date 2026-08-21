@@ -22,6 +22,7 @@ menu:
   Archives: /archives/ || fas fa-archive
   Tags: /tags/ || fas fa-tags
   Categories: /categories/ || fas fa-folder-open
+  留言板: /comments/ || fas fa-comment-dots
   About: /about/ || fas fa-user
 
 # --------------------------------------

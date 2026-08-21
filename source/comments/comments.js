@@ -202,7 +202,7 @@
   }
 
   /* ---------- 界面 ---------- */
-  var title = el('h3', 'sc-title', '评论区');
+  var title = el('h3', 'sc-title', wrap.getAttribute('data-title') || '评论区');
   var list = el('div', 'sc-list');
 
   var form = document.createElement('form');
