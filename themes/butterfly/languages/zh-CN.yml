@@ -20,7 +20,7 @@ no_title: 无标题
 post:
   created: 发表于
   updated: 更新于
-  wordcount: 总字数
+  wordcount: 字数
   min2read: 阅读时长
   min2read_unit: 分钟
   page_pv: 浏览量
