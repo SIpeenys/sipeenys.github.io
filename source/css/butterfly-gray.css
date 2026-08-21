@@ -59,14 +59,44 @@
   background: rgba(35, 37, 41, 0.9);
 }
 
-/* 顶部导航栏「留言板」菜单项居中显示（仅桌面端；移动端在侧边菜单列表中） */
+/* 顶部导航栏「留言板」菜单项：排在搜索按钮左边 + 高亮文字（仅桌面端；移动端在侧边菜单列表中） */
 @media (min-width: 769px) {
+  #menus {
+    display: flex;
+    align-items: center;
+  }
+
+  #nav .menus_items {
+    display: contents; /* 让菜单项参与 #menus 的 flex 排序 */
+  }
+
   #nav .menus_items .menus_item:has(> a[href='/comments/']) {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding-left: 0;
+    order: 1; /* 留言板 → 最左 */
+  }
+
+  #menus #search-button {
+    order: 2; /* 搜索 → 紧跟其后 */
+  }
+
+  #nav .menus_items .menus_item:not(:has(> a[href='/comments/'])) {
+    order: 3; /* Home/Archives/... 保持原顺序 */
+  }
+
+  #nav.hide-menu .menus_items {
+    display: none; /* 兜底：窄桌面窗口菜单收起时保持隐藏 */
+  }
+
+  #toggle-menu {
+    order: 5; /* 汉堡按钮始终在最右 */
+  }
+
+  #nav .menus_items .menus_item:has(> a[href='/comments/']) > a {
+    color: #e8a35e; /* 高亮暖橙色文字 */
+    font-weight: 600; /* 加粗 */
+  }
+
+  #nav .menus_items .menus_item:has(> a[href='/comments/']) > a:hover {
+    color: #fff; /* 悬停变亮白 */
   }
 }
 
