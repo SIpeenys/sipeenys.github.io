@@ -15,7 +15,7 @@
   var MUSIC_CONFIG = {
     home: {
       enable: true, // false = 主页不显示播放器
-      url: '/music/SoundHelix-Song-1.mp3', // 本地文件：放 source/music/ 里，写 /music/文件名
+      url: "/music/川井宪次 - 騎士王の誇り (骑士王的荣耀)_L.ogg", // 本地文件：放 source/music/ 里，写 /music/文件名
       title: 'Sample Song 1',
       author: 'SoundHelix',
     },
