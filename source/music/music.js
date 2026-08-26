@@ -19,9 +19,7 @@
       enable: true, // false = 主页不显示播放器
       list: [
         { url: '/music/knight-of-king.mp3', title: '騎士王の誇り（骑士王的荣耀）', author: '川井宪次' },
-        { url: '/music/SoundHelix-Song-1.mp3', title: 'Sample Song 1', author: 'SoundHelix' },
-        { url: '/music/SoundHelix-Song-2.mp3', title: 'Sample Song 2', author: 'SoundHelix' },
-        { url: '/music/SoundHelix-Song-3.mp3', title: 'Sample Song 3', author: 'SoundHelix' },
+        { url: "/music/niaozhishi.mp3", title: 'Sample Song 1', author: 'SoundHelix' },
       ],
     },
   };
