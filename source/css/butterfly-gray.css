@@ -703,3 +703,91 @@
   color: #c0504d;
   font-size: 0.9em;
 }
+
+/* 歌单模式：按钮排布（有歌单时列表按钮靠右） */
+.music-btns .music-close {
+  margin-left: auto;
+}
+
+.music-panel:has(.music-list-btn) .music-close {
+  margin-left: 0;
+}
+
+.music-panel:has(.music-list-btn) .music-list-btn {
+  margin-left: auto;
+}
+
+/* 歌单列表 */
+.music-listbox {
+  display: none;
+  border-top: 1px solid var(--hr-border);
+  margin-top: 10px;
+  padding-top: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.music-listbox.open {
+  display: block;
+}
+
+.music-list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: var(--font-color);
+  font-size: 0.85em;
+  transition: background .2s;
+}
+
+.music-list-item:hover {
+  background: var(--btn-bg);
+}
+
+.music-list-item.active {
+  color: #28547a;
+  font-weight: 600;
+}
+
+.music-list-idx {
+  color: var(--card-meta);
+  font-size: 0.8em;
+  min-width: 18px;
+}
+
+.music-list-item.active .music-list-idx {
+  color: #28547a;
+}
+
+.music-list-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.music-list-eq {
+  display: none;
+  align-items: flex-end;
+  height: 12px;
+  margin-left: auto;
+}
+
+.music-list-item.playing .music-list-eq {
+  display: flex;
+}
+
+.music-list-eq i {
+  width: 2px;
+  margin: 0 1px;
+  background: #28547a;
+  border-radius: 1px;
+  animation: music-eq-bounce 1s ease-in-out infinite;
+}
+
+.music-list-eq i:nth-child(1) { height: 5px; }
+.music-list-eq i:nth-child(2) { height: 11px; animation-delay: .2s; }
+.music-list-eq i:nth-child(3) { height: 7px; animation-delay: .4s; }
