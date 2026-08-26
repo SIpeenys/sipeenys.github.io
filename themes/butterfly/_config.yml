@@ -57,7 +57,7 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: https://github.com/SIpeenys.png
+  img: /images/avatar.jpg
   effect: false
 
 # Disable all banner images
@@ -1123,7 +1123,7 @@ CDN:
     # fancybox:
     # fancybox_css:
     # fireworks:
-    # fontawesome:
+    fontawesome: /fontawesome/css/all.min.css
     # gitalk:
     # gitalk_css:
     # giscus:
