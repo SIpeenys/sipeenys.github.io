@@ -1074,6 +1074,14 @@ inject:
         document.body.appendChild(s);
       })();
       </script>
+    - |
+      <script>
+      (function () {
+        var s = document.createElement('script');
+        s.src = '/music/music.js';
+        document.body.appendChild(s);
+      })();
+      </script>
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work

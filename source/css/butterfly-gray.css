@@ -330,3 +330,376 @@
     margin-left: 16px;
   }
 }
+
+/* ---------- 音乐播放器（music-*） ---------- */
+.music-fab {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 200;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #28547a;
+  color: #fff;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: transform .2s, background .2s;
+}
+
+.music-fab:hover {
+  transform: scale(1.08);
+  background: #3a6a94;
+}
+
+.music-fab .music-eq {
+  display: none;
+  align-items: flex-end;
+  height: 16px;
+}
+
+.music-fab.playing .music-eq {
+  display: flex;
+}
+
+.music-fab.playing .fa-music {
+  display: none;
+}
+
+.music-eq i {
+  width: 3px;
+  margin: 0 1px;
+  background: #fff;
+  border-radius: 1px;
+  animation: music-eq-bounce 1s ease-in-out infinite;
+}
+
+.music-eq i:nth-child(1) { height: 6px; animation-delay: 0s; }
+.music-eq i:nth-child(2) { height: 14px; animation-delay: .2s; }
+.music-eq i:nth-child(3) { height: 9px; animation-delay: .4s; }
+
+@keyframes music-eq-bounce {
+  0%, 100% { transform: scaleY(1); }
+  50% { transform: scaleY(.4); }
+}
+
+.music-panel {
+  position: fixed;
+  left: 24px;
+  bottom: 84px;
+  z-index: 200;
+  width: 260px;
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  display: none;
+}
+
+.music-panel.open {
+  display: block;
+}
+
+.music-info {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 10px;
+  min-width: 0;
+}
+
+.music-title {
+  color: var(--font-color);
+  font-size: 0.95em;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.music-author {
+  color: var(--card-meta);
+  font-size: 0.8em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.music-progress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.music-time {
+  color: var(--card-meta);
+  font-size: 0.75em;
+  min-width: 34px;
+}
+
+.music-bar {
+  flex: 1;
+  height: 4px;
+  background: var(--btn-bg);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.music-bar-fill {
+  height: 100%;
+  width: 0;
+  background: #28547a;
+  border-radius: 2px;
+}
+
+.music-btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.music-btns button {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--font-color);
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: color .2s;
+}
+
+.music-btns button:hover {
+  color: #28547a;
+}
+
+.music-btns .music-close {
+  margin-left: auto;
+  color: var(--card-meta);
+}
+
+.music-play.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 767px) {
+  .music-fab {
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .music-panel {
+    left: 16px;
+    bottom: 76px;
+    width: calc(100vw - 32px);
+    max-width: 280px;
+  }
+}
+
+/* ---------- 管理后台（adm-*） ---------- */
+.adm-login {
+  max-width: 380px;
+  margin: 60px auto;
+  padding: 28px;
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 10px;
+}
+
+.adm-login h2 {
+  font-size: 1.2em;
+  margin-bottom: 18px;
+  color: var(--font-color);
+}
+
+.adm-login input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+  padding: 9px 12px;
+  background: var(--global-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 5px;
+  color: var(--font-color);
+  font-size: 0.95em;
+  outline: none;
+}
+
+.adm-login input:focus {
+  border-color: #8fb2d9;
+}
+
+.adm-btn {
+  display: inline-block;
+  padding: 8px 22px;
+  border: none;
+  border-radius: 5px;
+  background: #28547a;
+  color: #fff;
+  font-size: 0.95em;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.adm-btn:hover {
+  background: #3a6a94;
+}
+
+.adm-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.adm-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.adm-bar h2 {
+  font-size: 1.2em;
+  margin: 0 12px 0 0;
+  color: var(--font-color);
+}
+
+.adm-tabs {
+  display: flex;
+  gap: 6px;
+  margin-right: auto;
+  flex-wrap: wrap;
+}
+
+.adm-tab {
+  padding: 5px 14px;
+  border: 1px solid var(--hr-border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  color: var(--card-meta);
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.adm-tab.active {
+  background: #28547a;
+  border-color: #28547a;
+  color: #fff;
+}
+
+.adm-refresh,
+.adm-logout {
+  font-size: 0.85em;
+  padding: 6px 14px;
+  border-radius: 5px;
+  border: 1px solid var(--hr-border);
+  background: var(--card-bg);
+  color: var(--font-color);
+  cursor: pointer;
+}
+
+.adm-logout {
+  border-color: #c96a6a;
+  color: #c96a6a;
+}
+
+.adm-cmt {
+  background: var(--card-bg);
+  border: 1px solid var(--hr-border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.adm-cmt-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.adm-nick {
+  font-weight: 600;
+  color: var(--font-color);
+}
+
+.adm-time {
+  color: var(--card-meta);
+  font-size: 0.8em;
+}
+
+.adm-status {
+  font-size: 0.75em;
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.adm-status.pending { background: #f4e3c1; color: #8a6116; }
+.adm-status.approved { background: #d5e8d8; color: #2e6b37; }
+.adm-status.rejected { background: #f0d5d5; color: #8a2e2e; }
+
+.adm-path {
+  color: var(--card-meta);
+  font-size: 0.8em;
+  margin-bottom: 6px;
+  word-break: break-all;
+}
+
+.adm-body {
+  color: var(--font-color);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 10px;
+}
+
+.adm-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.adm-actions button {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 14px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.adm-actions button:hover { opacity: 0.85; }
+
+.adm-ok { background: #3d8b4f; color: #fff; }
+.adm-rej { background: #b58a3a; color: #fff; }
+.adm-del { background: #c0504d; color: #fff; }
+
+.adm-empty {
+  text-align: center;
+  color: var(--card-meta);
+  padding: 40px 0;
+}
+
+.adm-note {
+  margin-top: 10px;
+  color: var(--card-meta);
+  font-size: 0.85em;
+  line-height: 1.6;
+}
+
+.adm-error {
+  margin-top: 10px;
+  color: #c0504d;
+  font-size: 0.9em;
+}
