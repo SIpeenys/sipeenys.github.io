@@ -15,7 +15,7 @@
   var MUSIC_CONFIG = {
     home: {
       enable: true, // false = 主页不显示播放器
-      url: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+      url: '/music/SoundHelix-Song-1.mp3', // 本地文件：放 source/music/ 里，写 /music/文件名
       title: 'Sample Song 1',
       author: 'SoundHelix',
     },
