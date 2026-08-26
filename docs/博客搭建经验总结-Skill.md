@@ -19,7 +19,7 @@
 ├─ 构建层：GitHub Actions（Node 24 + Hexo 8）
 │    └── hexo generate → 静态 HTML
 │
-├─ 托管层：GitHub Pages → https://sipeenys.github.io
+├─ 托管层：GitHub Pages → https://sipeenys-github-io.pages.dev
 │
 └─ 数据层：Supabase 数据库（评论区，独立于 git）
 ```
@@ -118,7 +118,7 @@
 
 | 项目 | 值 |
 |---|---|
-| 博客网址 | https://sipeenys.github.io |
+| 博客网址 | https://sipeenys-github-io.pages.dev |
 | 博客仓库 | `SIpeenys/sipeenys.github.io` |
 | 本地目录 | `D:\zsbsth` |
 | 当前主题 | **Butterfly 5.7.0**（备用：NexT 8.29 保留在 themes/next） |
